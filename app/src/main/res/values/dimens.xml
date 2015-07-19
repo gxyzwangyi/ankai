@@ -1,0 +1,128 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <dimen name="status_layout_avatar_size">60dp</dimen>
+    <dimen name="status_imageMaxSize">100dp</dimen>
+    <dimen name="status_like_size">22dp</dimen>
+
+
+    <dimen name="action_bar_height">48dp</dimen>
+    <dimen name="default_horizontal_margin">16dp</dimen>
+    <dimen name="default_vertical_margin">16dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="default_small_padding">8dp</dimen>
+    <dimen name="reset_dimen">0dp</dimen>
+
+    <!-- Navigation Drawer -->
+    <dimen name="navigation_drawer_width">240dp</dimen>
+    <dimen name="navigation_drawer_image_view_size">25dp</dimen>
+
+    <dimen name="navigation_drawer_personal_data_layout_height">60dp</dimen>
+
+    <!-- Circle size -->
+    <dimen name="circle_width">240dp</dimen>
+    <dimen name="circle_height">240dp</dimen>
+
+    <!-- Fonts' sizes -->
+    <dimen name="text_size_micro">12sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_medium">18sp</dimen>
+    <dimen name="text_size_large">22sp</dimen>
+    <dimen name="text_size_xlarge">28sp</dimen>
+    <dimen name="text_size_fragment_number">122sp</dimen>
+
+
+
+    <!-- 设置部分. -->
+    <dimen name="tab_width">180dp</dimen>
+    <dimen name="tab_height">56dp</dimen>
+    <dimen name="tab_text_size">16sp</dimen>
+    <dimen name="tab_text_selected_size">18sp</dimen>
+
+    <dimen name="customTitle">14sp</dimen>
+    <dimen name="customEntry">18sp</dimen>
+
+    <dimen name="tool_bar_text_size">22sp</dimen>
+    <dimen name="main_screen_side_padding">10dp</dimen>
+    <dimen name="text_top_padding">25dp</dimen>
+    <dimen name="title_text_size">26sp</dimen>
+    <dimen name="tool_bar_height">56dp</dimen>
+
+
+
+    <!-- 所有标题栏大小 -->
+    <dimen name="comm_titlebar_height">48dip</dimen>
+    <!-- 返回和保存字体的大小 -->
+    <dimen name="comm_titlebar_backAndSaveTextSize">18sp</dimen>
+    <!-- 所有标题栏中间的字体的大小 -->
+    <dimen name="comm_titlebar_centerTextSize">20sp</dimen>
+
+
+
+
+
+    <dimen name="toolbar_height">40dp</dimen>
+
+    <dimen name="drawer_width">280dp</dimen>
+    <dimen name="drawer_header_height">160dp</dimen>
+
+    <!--新闻内容页图片高度-->
+    <dimen name="flexible_space_image_height">240dp</dimen>
+
+    <dimen name="list_item_height">48dp</dimen>
+
+    <dimen name="divider_height">4px</dimen>
+
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="menu_margin_left">72dp</dimen>
+    <dimen name="view_margin">8dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_height">8dp</dimen>
+    <dimen name="drawer_icon_size">24dp</dimen>
+    <dimen name="about_icon_size">80dp</dimen>
+
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_subhead">16sp</dimen>
+    <dimen name="text_size_title_bigger">28sp</dimen>
+    <dimen name="text_size_normal">16sp</dimen>
+    <dimen name="text_size_body">14sp</dimen>
+
+    <dimen name="welcome_text_padding_bottom">160dp</dimen>
+    <dimen name="welcome_version_text_padding_bottom">120dp</dimen>
+
+
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="touch_raise">6dp</dimen>
+
+
+    <dimen name="cardMarginHorizontal">10dp</dimen>
+    <dimen name="cardMarginVertical">8dp</dimen>
+
+    <dimen name="materialviewpager_logoHeight">35dp</dimen>
+
+
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="margin_short">8dp</dimen>
+    <dimen name="margin_extra_short">4dp</dimen>
+    <dimen name="toolbar_margin_start">72dp</dimen>
+    <dimen name="flexible_space_height">72dp</dimen>
+    <dimen name="flexible_space_show_fab_offset">120dp</dimen>
+    <dimen name="parallax_image_height">180dp</dimen>
+    <dimen name="header_bar_height">72dp</dimen>
+    <dimen name="intersection_height">16dp</dimen>
+
+    <dimen name="sliding_slop">32dp</dimen>
+    <dimen name="sliding_overlay_blur_size">4dp</dimen>
+
+
+
+
+    <dimen name="avatarSize">50dp</dimen>
+
+
+
+    <dimen name="radius">5dp</dimen>
+</resources>

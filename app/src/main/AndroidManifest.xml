@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.edu.shu.ankai" >
+
+
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 这个权限用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!-- 这个权限用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+    <!--允许应用读取低级别的系统日志文件 -->
+    <uses-permission android:name="android.permission.READ_LOGS"></uses-permission>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:name=".utils.App"
+        android:allowBackup="true"
+        android:icon="@drawable/profile"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="2fsYceS5WqTGlQjCwxVqbyZh"/>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name"
+             >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AddActivity1"></activity>
+<activity android:name=".MainActivity"></activity>
+        <service android:name="com.avos.avoscloud.PushService"/>
+
+
+        <activity android:name=".sosinformation.SOSList1Activity"
+            android:theme="@style/sosTheme">
+        </activity>
+
+        <activity android:name=".sosinformation.SOSList2Activity"
+            android:theme="@style/sosTheme">
+        </activity>
+        <activity android:name=".sosinformation.SOSList3Activity"
+            android:theme="@style/sosTheme">
+        </activity>
+        <activity android:name=".sosinformation.SOSList4Activity"
+            android:theme="@style/sosTheme">
+        </activity>
+        <activity android:name=".sosinformation.SOSList5Activity"
+            android:theme="@style/sosTheme">
+        </activity>
+        <activity android:name=".sosinformation.SOSList6Activity"
+            android:theme="@style/sosTheme">
+        </activity>
+
+        <activity android:name=".sosinformation.SOSInfoActivity"
+            android:theme="@style/sosTheme">
+        </activity>
+        <activity android:name=".sosinformation.SOSContentActivity"  android:theme="@style/sosTheme"    ></activity>
+        <activity android:name=".ui.textviewhelp.TestActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar">
+        </activity>
+        <activity android:name=".ui.textviewhelp.TestList"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar">
+
+
+
+        </activity>
+        <activity android:name=".SettingActivity" ></activity>
+        <activity android:name=".BaseActivity" ></activity>
+
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".ForgetPasswordActivity" ></activity>
+        <activity android:name=".ComplainActivity"  ></activity>
+
+        <activity android:name=".FootprintActivity1" android:theme="@style/footprint"></activity>
+
+
+        <activity
+            android:name=".practice.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoBiaoti" >
+        </activity>
+        <activity
+            android:name=".practice.OrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TitlebarStyle" >
+        </activity>
+        <activity
+            android:name=".practice.CollectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TitlebarStyle" >
+        </activity>
+        <activity
+            android:name=".practice.ErrorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TitlebarStyle" >
+        </activity>
+        <activity
+            android:name=".practice.ExamActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TitlebarStyle" >
+        </activity>
+        <activity
+            android:name=".practice.ResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TitlebarStyle" >
+        </activity>
+        <activity
+            android:name=".practice.ExamErrorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TitlebarStyle" >
+        </activity>
+        <activity
+            android:name=".practice.HisResultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/TitlebarStyle" >
+        </activity>
+
+<activity android:name=".AboutActivity"></activity>
+<activity android:name=".BaseActivity1"></activity>
+
+        <!-- share SDK -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!-- 微信分享回调 -->
+        <!--微信分享回调 -->
+        <activity
+            android:name=".WXEntryActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+<activity android:name=".test.LabroomProgressActivity"  android:theme="@android:style/Theme.Translucent"></activity>
+<activity android:name=".practice.ChangeTimuActivity"></activity>
+        <activity android:name=".WebActivity"></activity>
+<activity android:name=".FindLabActivity"></activity>
+
+        <activity android:name=".SlidingUpRecyclerViewActivity"></activity>
+        <activity android:name=".ProgressActivity1" android:theme="@android:style/Theme.Translucent"></activity>
+        <activity android:name=".practice.PracticeProgressActivity" android:theme="@android:style/Theme.Translucent"></activity>
+        <activity android:name=".practice.ResultProgressActivity" android:theme="@android:style/Theme.Translucent"></activity>
+        <activity android:name=".test.CheckProgressActivity" android:theme="@android:style/Theme.Translucent"></activity>
+
+    </application>
+</manifest>

@@ -1,0 +1,75 @@
+{
+	"code": 1,
+	"content": [{
+			"timu": {
+			"title": " 取用化学药品时，以下哪些事项操作是正确的？",
+			"one": "取用腐蚀和刺激性药品时，尽可能带上橡皮手套和防护眼镜",
+			"tow": "倾倒时，切勿直对容器口俯视；吸取时，应该使用橡皮球 
+",
+			"three": "开启有毒气体容器时应带防毒用具",
+			"four": "以上都是 
+"
+		},
+		"daan": {
+			"daan_one": "",
+			"daan_tow": "",
+			"daan_three": "",
+			"daan_four": "D"
+		},
+		"types": {
+			"types": "单选"
+		},
+		"detail": {
+			"detail": " 这几项操作都是正确的."
+		}
+
+	},
+	
+		{
+		"timu": {
+			"title": "进行微生物的危险度评估的最主要考虑因素是",
+			"one": "实验室的性质或职能  ",
+			"tow": "微生物危险度等级  ",
+			"three": "病原体的操作步骤和方法  ",
+			"four": "病原体的地方流行性 
+"
+		},
+		"daan": {
+			"daan_one": "",
+			"daan_tow": "B",
+			"daan_three": "",
+			"daan_four": ""
+		},
+		"types": {
+			"types": "单选"
+		},
+		"detail": {
+			"detail": "地方流行性最重要"
+		}
+	},
+		{
+		"timu": {
+			"title": "以下药品中，可以与水直接接触的是：",
+			"one": "金属钠、钾 ",
+			"tow": "电石 ",
+			"three": "白磷 ",
+			"four": "金属氢化物 
+"
+		},
+		"daan": {
+			"daan_one": "",
+			"daan_tow": "D",
+			"daan_three": "",
+			"daan_four": ""
+		},
+		"types": {
+			"types": "单选"
+		},
+		"detail": {
+			"detail": " 钠和钾会着爆炸以及着火"
+		}
+	}
+
+	
+	
+	]}

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="countries">
+
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Antigua Barbuda</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Antigua &amp; Barbuda</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Antigua &amp; Barbuda</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+       <item>Afghanistan</item>
+    <item>Albania</item>
+    <item>Algeria</item>
+    <item>Andorra</item>
+    <item>Angola</item>
+    <item>Antigua &amp; Barbuda</item>
+    <item>Argentina</item>
+    <item>Armenia</item>
+    <item>Australia</item>
+    <item>Austria</item>
+    <item>Azerbaijan</item>
+    </string-array>>
+
+    <string-array name="lou">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+</string-array>
+
+
+
+    <string-array name="jiaoshi">
+        <item>105</item>
+        <item>107</item>
+        <item>111</item>
+        <item>113</item>
+        <item>115</item>
+        <item>201</item>
+        <item>203</item>
+        <item>205</item>
+        <item>207</item>
+        <item>209</item>
+        <item>211</item>
+    </string-array>
+
+
+
+
+
+
+
+
+</resources>

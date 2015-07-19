@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/customTitle"
+        android:textColor="@color/blue_light"
+        android:layout_marginTop="18dp"
+        android:text="上下课" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/customEntry"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/blue_light"
+        android:text="您确定这是要上课签到吗" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/customTitle"
+        android:layout_marginTop="18dp"
+        android:textColor="@color/blue_light"
+        android:text="留言" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/customEntry"
+        android:layout_marginTop="4dp"
+        android:textColorHint="@color/blue_light"
+        android:hint="做什么实验"
+         />
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_lab1"
+        android:entries="@array/lou" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_lab2"
+        android:entries="@array/jiaoshi"/>
+
+
+</LinearLayout>

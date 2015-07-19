@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:layout_centerInParent="true">
+
+
+    <TextView
+        android:id="@+id/mobileAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="首次登录，数据更新中"
+        android:layout_below="@+id/btnSearch"
+        android:layout_centerHorizontal="true" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="48dp" >
+
+        <com.gc.materialdesign.views.ProgressBarCircularIndeterminate
+            android:id="@+id/progressBarCircularIndetermininate"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:background="#1E88E5" />
+    </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

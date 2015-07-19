@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="notice"
+        android:summary="当有新消息时会进行推送"
+        android:title="推送通知"
+        android:defaultValue="true"/>
+
+    <PreferenceCategory
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="我发布的商品">
+        <CheckBoxPreference
+            android:key="my_comment"
+            android:summary="有人在自己发布的商品下发布了评论"
+            android:title="评论提醒"
+            android:defaultValue="true"/>
+        <CheckBoxPreference
+            android:key="my_like"
+            android:title="赞提醒"
+            android:summary="有人在自己发布的商品下点赞"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="我点过赞或者喜欢过的商品">
+        <CheckBoxPreference
+            android:key="other_comment"
+            android:summary="有人在自己喜欢过的商品下发布了评论"
+            android:title="评论提醒"
+            android:defaultValue="true"/>
+        <CheckBoxPreference
+            android:key="other_like"
+            android:title="赞提醒"
+            android:summary="有人在自己发布的商品下点赞"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:title="周围商品提醒">
+        <CheckBoxPreference
+            android:key="nearby_deal"
+            android:summary="当有人在自己附近发布了特价商品"
+            android:title="特价提醒"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+
+
+
+
+
+
+</PreferenceScreen>

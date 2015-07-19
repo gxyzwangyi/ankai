@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/history_come"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="上班打卡"/>
+    <item
+        android:id="@+id/history_leave"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="下班打卡"/>
+    <item
+        android:id="@+id/history_delete"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="删除数据"/>
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="更换帐号"/>
+    <item
+        android:id="@+id/test"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="测试"/>
+    <item
+        android:id="@+id/refresh"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="刷新"/>
+
+
+
+</menu>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dip"
+        android:layout_marginRight="0dip"
+        android:layout_marginTop="0dip"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+
+            <com.rey.material.widget.EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_gravity="center_horizontal|top"
+                android:id="@+id/username1"
+                android:background="@null"
+                android:maxLength="50"
+                android:paddingBottom="6.0dip"
+                android:paddingLeft="50.0dip"
+                android:paddingTop="6.0dip"
+                android:textSize="17.829987dip"
+                android:layout_toRightOf="@+id/textView"
+                android:layout_toEndOf="@+id/textView"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/username1"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10.0dip"
+                android:text="用户名"
+                android:textColor="#ff333333"
+                android:textSize="16.5dip"
+                android:id="@+id/textView" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="#ffcfd4da" />
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text=""
+                android:maxLength="16"
+                android:maxLines="1"
+                android:paddingBottom="6.0dip"
+                android:paddingLeft="50.0dip"
+                android:paddingTop="6.0dip"
+                android:textColor="#ff333333"
+                android:textSize="17.829987dip"
+                android:layout_toRightOf="@+id/textView10"
+                android:layout_toEndOf="@+id/textView10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/gender"
+                android:paddingLeft="10.0dip"
+                android:text="性别"
+                android:textColor="#ff333333"
+                android:textSize="16.5dip"
+                android:id="@+id/textView10" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="#ffcfd4da" />
+
+
+
+
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/submit"
+            android:layout_width="365dp"
+            android:layout_height="40.0dip"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="5.0dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="5.0dip"
+            android:paddingLeft="15.0dip"
+            android:paddingRight="15.0dip"
+            android:background="#1E88E5"
+            android:text="保存修改" />
+
+
+    </LinearLayout>
+</LinearLayout>

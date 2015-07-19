@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blue">#303F9F</color>
+
+    <color name="accent_color">@color/blue</color>
+    <color name="colorPrimary">@color/blue</color>
+    <color name="colorPrimaryDark">@color/blue</color>
+    <color name="statusBarColor">@color/blue</color>
+    <color name="navigationBarColor">@android:color/black</color>
+    <color name="drawerArrowColor">@android:color/white</color>
+    <color name="app_primary">#455A64</color>
+    <color name="app_primary_dark">#37474F</color>
+    <color name="dark_primary_color">#00796B</color>
+    <color name="back_ground_color">#FCFCFC</color>
+
+    <color name="white">#ffffff</color>
+    <color name="gray">#666666</color>
+    <color name="gray_shadow">#cccccc</color>
+    <color name="grey_background">#eeeeee</color>
+    <color name="black">#000000</color>
+    <color name="background_user_navigation_drawer">#161F29</color>
+    <color name="transparent">#00000000</color>
+    <color name="red">#f2100c</color>
+    <color name="dark_red">#40000c</color>
+    <color name="grey_font">#333333</color>
+
+    <color name="blue_light">#33B5E5</color>
+    <color name="purple_light">#AA66CC</color>
+    <color name="green_light">#99CC00</color>
+    <color name="orange_light">#FFBB33</color>
+    <color name="red_light">#FF4444</color>
+
+    <color name="blue_dark">#0099CC</color>
+    <color name="purple_dark">#9933CC</color>
+    <color name="green_dark">#669900</color>
+    <color name="orange_dark">#FF8800</color>
+    <color name="red_dark">#CC0000</color>
+
+    <color name="material_pink">#e91e63</color>
+    <color name="material_purple">#673ab7</color>
+    <color name="material_blue">#5677fc</color>
+
+    <color name="material_indigo_500">#3F51B5</color>
+    <color name="material_indigo_600">#3949AB</color>
+    <color name="material_teal_500">#009688</color>
+    <color name="material_red_400">#EF5350</color>
+    <color name="text_color">#222222</color>
+    <color name="transparent1">#0000</color>
+
+    <color name="titlebar_bg">#222222</color>
+    <color name="select_default">#969fa5</color>
+    <color name="select_right">#48daa9</color>
+    <color name="select_error">#eb6161</color>
+    <color name="select_select">#c6c6c6</color>
+    <color name="select_answered">#60adde</color>
+
+    <color name="right_answer">#009100</color>
+    <color name="background_material_light">#ffeeeeee</color>
+
+    <color name="drawer_list_item_highlight">#ffffffff</color>
+    <color name="drawer_list_item_normal">#d0ffffff</color>
+
+    <color name="red_500">#F44336</color>
+
+    <color name="pink_300">#F06292</color>
+    <color name="pink_500">#E91E63</color>
+    <color name="pink_800">#AD1457</color>
+
+    <color name="indigo_400">#5C6BC0</color>
+
+    <color name="blue_500">#2196F3</color>
+
+    <color name="teal_500">#009688</color>
+
+    <color name="green_500">#4CAF50</color>
+
+    <color name="yellow_500">#FFEB3B</color>
+
+    <color name="deep_orange_500">#FF5722</color>
+
+    <color name="brown_500">#795548</color>
+
+    <color name="status_header_color">@color/pink_500</color>
+
+    <array name="statusColor">
+        <item>@color/red_500</item>
+        <item>@color/teal_500</item>
+        <item>@color/teal_500</item>
+        <item>@color/green_500</item>
+        <item>@color/yellow_500</item>
+        <item>@color/deep_orange_500</item>
+    </array>
+    <color name="green">#4CAF50</color>
+    <color name="green_teal">#009688</color>
+    <color name="purple">#673AB7</color>
+    <color name="cyan">#00BCD4</color>
+    <color name="lime">#CDDC39</color>
+
+    <color name="primary">#009688</color>
+    <color name="primaryDark">#00796b</color>
+    <color name="accent">#eeff41</color>
+    <color name="accentLight">#F4FF81</color>
+    <color name="status_like_pink">#ff6868</color>
+    <color name="status_background">#FFA</color>
+    <color name="status_text">#000</color>
+    <color name="status_color">#FFFF0000</color>
+
+    <color name="tree_green">#5CB98D</color>
+    <color name="dark_tree_green">#428666</color>
+</resources>

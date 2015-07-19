@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<com.rey.material.widget.Button
+		android:id="@+id/btnSearch"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="确定刷新"
+		style="@style/btn_green.status_menu"
+		android:layout_below="@+id/shu"
+		android:layout_centerHorizontal="true" />
+	<com.rengwuxian.materialedittext.MaterialEditText
+		android:id="@+id/shu"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:hint="输入刷新的题库量"
+		android:layout_marginTop="81dp"
+		app:met_baseColor="#0056d3"
+		app:met_primaryColor="#982360"
+		android:layout_centerHorizontal="true" />
+
+	<com.rey.material.widget.TextView
+		android:id="@+id/mobileAddress"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="刷新不成功，请监测你的网络环境(输入值不要超过50，也不要低于20，如果未显示题目请再次刷新)"
+		android:layout_below="@+id/btnSearch"
+		android:textColor="@color/material_blue_500"
+		android:layout_centerHorizontal="true" />
+
+
+	<ProgressBar
+		android:id="@+id/progressBar1"
+		style="?android:attr/progressBarStyleLarge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:visibility="gone"
+		/>
+
+</RelativeLayout>
