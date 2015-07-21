@@ -2,7 +2,6 @@ package cn.edu.shu.ankai.utils;
 
 
 import android.content.Context;
-import android.media.Image;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -17,7 +16,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-
+import java.io.UnsupportedEncodingException;
 
 
 public class StreamTool {
@@ -113,7 +112,7 @@ public class StreamTool {
     }
     /**
      * @方法功能 InputStream 转为 byte
-     * @param InputStream
+     * @param
      * @return 字节数组
      * @throws Exception
      */
@@ -139,7 +138,7 @@ public class StreamTool {
 
     /**
      * @方法功能 byte 转为 InputStream
-     * @param 字节数组
+     * @param
      * @return InputStream
      * @throws Exception
      */
@@ -150,7 +149,7 @@ public class StreamTool {
 
     /**
      * @功能 短整型与字节的转换
-     * @param 短整型
+     * @param
      * @return 两位的字节数组
      */
     public static byte[] shortToByte(short number) {
@@ -165,7 +164,7 @@ public class StreamTool {
 
     /**
      * @功能 字节的转换与短整型
-     * @param 两位的字节数组
+     * @param
      * @return 短整型
      */
     public static short byteToShort(byte[] b) {
@@ -179,7 +178,7 @@ public class StreamTool {
 
     /**
      * @方法功能 整型与字节数组的转换
-     * @param 整型
+     * @param
      * @return 四位的字节数组
      */
     public static byte[] intToByte(int i) {
@@ -193,7 +192,7 @@ public class StreamTool {
 
     /**
      * @方法功能 字节数组和整型的转换
-     * @param 字节数组
+     * @param
      * @return 整型
      */
     public static int bytesToInt(byte[] bytes) {
@@ -206,7 +205,7 @@ public class StreamTool {
 
     /**
      * @方法功能 字节数组和长整型的转换
-     * @param 字节数组
+     * @param
      * @return 长整型
      */
     public static byte[] longToByte(long number) {
@@ -223,7 +222,7 @@ public class StreamTool {
 
     /**
      * @方法功能 字节数组和长整型的转换
-     * @param 字节数组
+     * @param
      * @return 长整型
      */
     public static long byteToLong(byte[] b) {
@@ -408,6 +407,68 @@ public class StreamTool {
         byte[] content = out.toByteArray();
         return content;
     }
+
+
+
+    public  static String utf8  (String str) {
+        byte[] b = str.getBytes();
+        char[] c = new char[b.length];
+        for (int i=0;i<b.length;i++){
+            c[i] = (char)(b[i]&0x00FF);
+        }
+        String s = new String(c);
+        return  s;
+    }
+
+
+        /**
+         * @param args
+         */
+        public static void main(String[] args) throws Exception {
+            String gbk = "iteye问答频道编码转换问题";
+
+            String iso = new String(gbk.getBytes("UTF-8"),"ISO-8859-1");
+
+            System.out.println(iso);
+
+            String utf8 = new String(iso.getBytes("ISO-8859-1"),"UTF-8");
+            System.out.println(utf8);
+
+            System.out.println(getUTF8StringFromGBKString(gbk));
+        }
+
+        public static String getUTF8StringFromGBKString(String gbkStr) {
+            try {
+                return new String(getUTF8BytesFromGBKString(gbkStr), "UTF-8");
+            } catch (UnsupportedEncodingException e) {
+                throw new InternalError();
+            }
+        }
+
+        public static byte[] getUTF8BytesFromGBKString(String gbkStr) {
+            int n = gbkStr.length();
+            byte[] utfBytes = new byte[3 * n];
+            int k = 0;
+            for (int i = 0; i < n; i++) {
+                int m = gbkStr.charAt(i);
+                if (m < 128 && m >= 0) {
+                    utfBytes[k++] = (byte) m;
+                    continue;
+                }
+                utfBytes[k++] = (byte) (0xe0 | (m >> 12));
+                utfBytes[k++] = (byte) (0x80 | ((m >> 6) & 0x3f));
+                utfBytes[k++] = (byte) (0x80 | (m & 0x3f));
+            }
+            if (k < utfBytes.length) {
+                byte[] tmp = new byte[k];
+                System.arraycopy(utfBytes, 0, tmp, 0, k);
+                return tmp;
+            }
+            return utfBytes;
+        }
+
+
+
 
 }
 

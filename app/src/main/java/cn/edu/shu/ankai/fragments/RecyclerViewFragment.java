@@ -1,6 +1,7 @@
 package cn.edu.shu.ankai.fragments;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -15,9 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,10 +46,12 @@ import cn.edu.shu.ankai.ComplainActivity;
 import cn.edu.shu.ankai.MainActivity;
 import cn.edu.shu.ankai.R;
 import cn.edu.shu.ankai.db.HistoryData;
+import cn.edu.shu.ankai.dialog.CityDialog;
 import cn.edu.shu.ankai.model.History;
 import cn.edu.shu.ankai.test.JsonCommon;
 import cn.edu.shu.ankai.ui.adapter.TestRecyclerViewAdapter;
 import cn.edu.shu.ankai.utils.App;
+import cn.edu.shu.ankai.utils.StreamTool;
 
 /**
      * Created by florentchampigny on 24/04/15.
@@ -72,11 +73,11 @@ import cn.edu.shu.ankai.utils.App;
     private App app;
     private ArrayList<HashMap<String, Object>> historylist = new ArrayList<HashMap<String, Object>>();
     private View positiveAction;
+    private  TextView  stv;
+    private CityDialog dialog1;
+
     private static final int COMPLETED = 0;
     public String json;
-    private  Spinner spinner1;
-    private Spinner spinner2;
-    private Spinner spinner3;
     private String sp1_str;
     private String sp2_str;
     String str;
@@ -121,48 +122,12 @@ import cn.edu.shu.ankai.utils.App;
         fab2.setOnClickListener(clickListener);
         fab3.setOnClickListener(clickListener);
 
-        spinner1 =(Spinner)view.findViewById(R.id.spinner_lab1);
-        spinner2 =(Spinner)view.findViewById(R.id.spinner_lab2);
-
         LayoutInflater inflater = LayoutInflater.from(getActivity());
         final View dialog = inflater.inflate(R.layout.dialog_customview, null);
 
-        spinner1 =(Spinner)dialog.findViewById(R.id.spinner_lab1);
-        spinner2 =(Spinner)dialog.findViewById(R.id.spinner_lab2);
 
-        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
 
-                TextView tx_spinner1 = (TextView) spinner1.getSelectedView();
-                sp1_str = (String) tx_spinner1.getText();
-                Log.e("算盘",tx_spinner1.getText().toString());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
-
-        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-
-                TextView tx_spinner2 = (TextView) spinner2.getSelectedView();
-                sp2_str = (String) tx_spinner2.getText();
-                Log.e("算盘",tx_spinner2.getText().toString());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
 
 
 
@@ -203,7 +168,7 @@ import cn.edu.shu.ankai.utils.App;
         List<History> list = new ArrayList();
 
         History history=new History();
-        history.setName("姓名");
+        history.setName("用户名");
         history.setTitle("课程");
         history.setTime("时间");
         history.setLocal("地点");
@@ -258,6 +223,18 @@ if (historylist.size()>0) {
                                          str4 = profilelolLL;
 
 
+                                        sp1_str=stv.getText().toString();
+                                        Log.e("埃斯皮",sp1_str);
+                                      String  sp1_str1= StreamTool.utf8(sp1_str);
+                                        Log.e("埃斯皮1",sp1_str1);
+
+                                      try {
+                                        String sp1_str2= StreamTool.getUTF8StringFromGBKString(sp1_str);
+                                          Log.e("埃斯皮2",sp1_str2);
+
+                                      }
+                                        catch (Exception e){}
+
                                         //Log.v("腊肉2",str3);
                                         // 验证用户输入
                                         if (str == null || str.equals("")) {
@@ -273,14 +250,14 @@ if (historylist.size()>0) {
                                             map.put("name",currentUser.getUsername());
                                             map.put("title", str);
                                             map.put("show_time", str2);
-                                            map.put("local", str3+sp1_str+sp2_str);
+                                            map.put("local", str3+sp1_str);
                                             map.put("ll",str4);
                                             // SharedPreferences sp =historyActivity.this.getSharedPreferences("history", Context.MODE_WORLD_READABLE);
 
 
                                             History hi = new History();
                                             hi.setName(currentUser.getUsername());
-                                            hi.setLocal(str3+sp1_str+sp2_str);
+                                            hi.setLocal(str3+sp1_str);
 
                                             hi.setTime(str2);
                                             hi.setTitle(str);
@@ -291,12 +268,12 @@ if (historylist.size()>0) {
                                         //    timelineAdapter.notifyDataSetChanged();
 
 
-                                    JsonDownloadThread thread = new JsonDownloadThread();
+
+
+
+
+                                            JsonDownloadThread thread = new JsonDownloadThread();
                                             thread.start();
-
-
-
-
                                             Toast.makeText(
                                                     getActivity(),
                                                     "上课签到成功:" + str + "",
@@ -314,6 +291,31 @@ if (historylist.size()>0) {
                                     }
 
                                 }).build();
+
+                        stv = (TextView) dialog.findViewById(R.id.stv);
+                        stv.setTextColor(Color.parseColor("#FFF9C4"));
+                        stv.setOnClickListener(new View.OnClickListener() {
+
+                            @Override
+                            public void onClick(View v) {
+                                // TODO Auto-generated method stub
+                                CityDialog.InputListener listener = new CityDialog.InputListener() {
+
+                                    @Override
+                                    public void getText(String str) {
+                                        // TODO Auto-generated method stub
+                                        stv.setText(str);
+                                        stv.setTextColor(Color.parseColor("#FFEB3B"));
+                                    }
+                                };
+                                dialog1 = new CityDialog(getActivity(), listener);
+                                dialog1.setTitle("选择具体地点");
+                                dialog1.show();
+                            }
+                        });
+
+
+
 
                         positiveAction = dialog.getActionButton(DialogAction.POSITIVE);
                         //noinspection ConstantConditions
@@ -374,7 +376,7 @@ if (historylist.size()>0) {
             String key = "sdhr66135152";
             InputStream inStream = this.getClass().getResourceAsStream("/assets/qiandao_up.xml");
                 try {
-                    json = getMobileAddress(inStream, key, currentUser.getUsername(), str, str3, str4, sp1_str + sp2_str,str2);
+                    json = getMobileAddress(inStream, key, currentUser.getUsername(), str, str3, str4, sp1_str,str2);
 
                     Message msg = new Message();
                     msg.what = COMPLETED;
@@ -392,6 +394,7 @@ if (historylist.size()>0) {
     {
 
         String soap = readSoapFile(inStream, key, user, des, loca, ll, classroom,time);
+        Log.e("步骤",soap);
         byte[] data = soap.getBytes();
         URL url = new URL("http://202.121.199.198/AnkaiAPPWebService/WebService_AnKaiDaTi.asmx");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -427,7 +430,7 @@ if (historylist.size()>0) {
         params.put("loca", loca);
         params.put("ll", ll);
         params.put("classroom", classroom);
-        params.put("time",time);
+        params.put("time", time);
         return JsonCommon.replace(soapxml, params);
     }
 

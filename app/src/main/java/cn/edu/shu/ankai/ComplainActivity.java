@@ -43,7 +43,7 @@ public class ComplainActivity extends Activity {
                     if (!TextUtils.isEmpty(content)) {
                         Intent intent = new Intent(Intent.ACTION_SENDTO);
                         intent.setType("text/plain");
-                        intent.putExtra(Intent.EXTRA_SUBJECT, "服务评价");
+                        intent.putExtra(Intent.EXTRA_SUBJECT, "软件评价");
                         intent.putExtra(Intent.EXTRA_TEXT, content);
                         intent.setData(Uri.parse("shuwangyi@yeah.net"));
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
