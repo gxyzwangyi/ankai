@@ -38,7 +38,9 @@ import cn.edu.shu.ankai.fragments.ScrollFragment;
 import cn.edu.shu.ankai.model.NavigationDrawerItem;
 import cn.edu.shu.ankai.practice.PracticeProgressActivity;
 import cn.edu.shu.ankai.service.AVService;
+import cn.edu.shu.ankai.test.Setting;
 import cn.edu.shu.ankai.ui.navigationdrawer.NavigationDrawerView;
+import cn.edu.shu.ankai.utils.PreferenceConstants;
 import cn.edu.shu.ankai.utils.PreferenceUtils;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
@@ -63,9 +65,9 @@ public class MainActivity extends ActionBarActivity {
 
     DrawerLayout mDrawerLayout;
 
-  public ListView leftDrawerListView;
+    public ListView leftDrawerListView;
 
-    RelativeLayout personLayout ;
+    RelativeLayout personLayout;
 
     private CharSequence mTitle;
 
@@ -74,48 +76,43 @@ public class MainActivity extends ActionBarActivity {
     private List<NavigationDrawerItem> navigationItems;
 
     private TextView UserView;
-   private   TextView EmailView;
+    private TextView EmailView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
         //隐藏标题栏
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         //隐藏状态栏
         //定义全屏参数
-        int flag=WindowManager.LayoutParams.FLAG_FULLSCREEN;
+        int flag = WindowManager.LayoutParams.FLAG_FULLSCREEN;
         //获得当前窗体对象
-        Window window=MainActivity.this.getWindow();
+        Window window = MainActivity.this.getWindow();
         //设置当前窗体为全屏显示
         window.setFlags(flag, flag);
-
-
-
         setContentView(R.layout.activity_main);
-
         setTitle("实验室安全教育手机版-上海大学");
 
+
+        initSetting();
         mViewPager = (MaterialViewPager) findViewById(R.id.materialViewPager);
 
         toolbar = mViewPager.getToolbar();
-      //  mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //  mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
 
- //       mTitle = mDrawerTitle = getTitle();
-       // getSupportActionBar().setIcon(R.drawable.ic_action_ab_transparent);
+        //       mTitle = mDrawerTitle = getTitle();
+        // getSupportActionBar().setIcon(R.drawable.ic_action_ab_transparent);
 
         Timber.tag("LifeCycles");
         Timber.d("Activity Created");
 
-   //     if (savedInstanceState == null) {
-    //        getSupportFragmentManager().beginTransaction().add(R.id.contentFrame,
-    //                Fragment.instantiate(MainActivity.this, Fragments.ONE.getFragment())).commit();
-     //   } else {
-     //       currentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
-      //  }
+        //     if (savedInstanceState == null) {
+        //        getSupportFragmentManager().beginTransaction().add(R.id.contentFrame,
+        //                Fragment.instantiate(MainActivity.this, Fragments.ONE.getFragment())).commit();
+        //   } else {
+        //       currentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
+        //  }
 
         navigationItems = new ArrayList<>();
         navigationItems.add(new NavigationDrawerItem(getString(R.string.fragment_one), true));
@@ -138,9 +135,9 @@ public class MainActivity extends ActionBarActivity {
         //侧边栏登录
         personLayout = (RelativeLayout) findViewById(R.id.userDrawerHeader);
         AVUser currentUser = AVUser.getCurrentUser();
-        UserView=(TextView)   findViewById(R.id.drawerUserName);
-        EmailView=(TextView)   findViewById(R.id.drawerUserEmail);
-        if (currentUser == null){
+        UserView = (TextView) findViewById(R.id.drawerUserName);
+        EmailView = (TextView) findViewById(R.id.drawerUserEmail);
+        if (currentUser == null) {
             personLayout.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -150,10 +147,9 @@ public class MainActivity extends ActionBarActivity {
 
                 }
             });
-        }
-        else{
+        } else {
             UserView.setText(currentUser.getUsername());
-            EmailView.setText( PreferenceUtils.getPrefString(MainActivity.this, "school", null));
+            EmailView.setText(PreferenceUtils.getPrefString(MainActivity.this, "school", null));
             personLayout.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -173,7 +169,7 @@ public class MainActivity extends ActionBarActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                     Toast.makeText(getApplicationContext(), "Neutral", Toast.LENGTH_LONG);
                                     AVService.logout();
-                                    Intent loginIntent = new Intent( MainActivity.this, LoginActivity.class);
+                                    Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
                                     startActivity(loginIntent);
                                 }
                             })
@@ -185,10 +181,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
 
-
-
-
-        mNavigationDrawerListViewWrapper = (NavigationDrawerView)findViewById(R.id.navigationDrawerListViewWrapper) ;
+        mNavigationDrawerListViewWrapper = (NavigationDrawerView) findViewById(R.id.navigationDrawerListViewWrapper);
         mNavigationDrawerListViewWrapper.replaceWith(navigationItems);
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
@@ -201,15 +194,15 @@ public class MainActivity extends ActionBarActivity {
 
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-               // getSupportActionBar().setTitle(mTitle);
+                // getSupportActionBar().setTitle(mTitle);
                 supportInvalidateOptionsMenu();
             }
         };
 
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-   //     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-   //     getSupportActionBar().setHomeButtonEnabled(true);
+        //     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //     getSupportActionBar().setHomeButtonEnabled(true);
 
         selectItem(currentSelectedPosition);
 
@@ -231,8 +224,6 @@ public class MainActivity extends ActionBarActivity {
         });
 
 
-
-
         if (toolbar != null) {
             setSupportActionBar(toolbar);
 
@@ -247,9 +238,8 @@ public class MainActivity extends ActionBarActivity {
         }
 
 
-
-       // mDrawerToggle = new ActionBarDrawerToggle(this, mDrawer, 0, 0);
-   //     mDrawer.setDrawerListener(mDrawerToggle);
+        // mDrawerToggle = new ActionBarDrawerToggle(this, mDrawer, 0, 0);
+        //     mDrawer.setDrawerListener(mDrawerToggle);
 
         mViewPager.getViewPager().setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
 
@@ -259,27 +249,26 @@ public class MainActivity extends ActionBarActivity {
             public Fragment getItem(int position) {
                 switch (position) {
                     case 0:
-                       return LabFragment.newInstance();
+                        return LabFragment.newInstance();
                     case 1:
-                        return  RecyclerViewFragment.newInstance();
+                        return RecyclerViewFragment.newInstance();
                     default:
-                     return ScrollFragment.newInstance();
+                        return ScrollFragment.newInstance();
                 }
             }
-
 
 
             @Override
             public void setPrimaryItem(ViewGroup container, int position, Object object) {
                 super.setPrimaryItem(container, position, object);
                 //only if position changed
-                if(position == oldPosition)
+                if (position == oldPosition)
                     return;
                 oldPosition = position;
 
                 int color = 0;
                 int imageUrl = R.drawable.bg_0;
-                switch (position){
+                switch (position) {
                     case 0:
                         imageUrl = R.drawable.bg_0;
                         color = getResources().getColor(R.color.blue);
@@ -294,11 +283,11 @@ public class MainActivity extends ActionBarActivity {
                         break;
                 }
 
-                Drawable currentDrawable =getResources().getDrawable(imageUrl);
+                Drawable currentDrawable = getResources().getDrawable(imageUrl);
 
                 final int fadeDuration = 1000;
-                mViewPager.setColor(color,fadeDuration);
-                mViewPager.setImageDrawable(currentDrawable,fadeDuration);
+                mViewPager.setColor(color, fadeDuration);
+                mViewPager.setImageDrawable(currentDrawable, fadeDuration);
 
 
             }
@@ -310,7 +299,7 @@ public class MainActivity extends ActionBarActivity {
 
             @Override
             public CharSequence getPageTitle(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         return "查看实验室情况";
                     case 1:
@@ -323,10 +312,13 @@ public class MainActivity extends ActionBarActivity {
         mViewPager.getPagerTitleStrip().setViewPager(mViewPager.getViewPager());
     }
 
-
-
-
-
+    private void initSetting() {
+        Setting.setContext(this);
+        Setting.setVibrateEnable(PreferenceUtils.getPrefBoolean(
+                this, PreferenceConstants.VIBRATIONNOTIFY, true));
+        Setting.setVoiceEnable(PreferenceUtils.getPrefBoolean(
+                this, PreferenceConstants.SCLIENTNOTIFY, true));
+    }
 
 
     @Override
@@ -347,14 +339,11 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-
-
 
 
     @Override
@@ -365,8 +354,6 @@ public class MainActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 
 
 //没用
@@ -391,7 +378,7 @@ public class MainActivity extends ActionBarActivity {
             navigationItems.get(position).setSelected(true);
 
             currentSelectedPosition = position;
-           //getSupportActionBar().setTitle(navigationItems.get(currentSelectedPosition).getItemName());
+            //getSupportActionBar().setTitle(navigationItems.get(currentSelectedPosition).getItemName());
         }
 
         if (mLinearDrawerLayout != null) {
@@ -403,12 +390,12 @@ public class MainActivity extends ActionBarActivity {
     private void onNavigationDrawerItemSelected(int position) {
         switch (position) {
             case 0:
-                Intent intent = new Intent(this,MainActivity.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case 1:
-                Intent intent1 = new Intent(this,SettingActivity.class);
+                Intent intent1 = new Intent(this, SettingActivity.class);
                 startActivity(intent1);
                 break;
             case 2:
@@ -421,14 +408,12 @@ public class MainActivity extends ActionBarActivity {
                 break;
 
             case 4:
-                Intent intent4= new Intent(this,AboutActivity.class);
+                Intent intent4 = new Intent(this, AboutActivity.class);
                 startActivity(intent4);
                 break;
 
             case 5:
-                showShare(MainActivity.this,MainActivity.this.getResources().getString(R.string.share_app_string));
-
-
+                showShare(MainActivity.this, MainActivity.this.getResources().getString(R.string.share_app_string));
 
 
         }
@@ -436,11 +421,11 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-    protected void showShare(Context context,String text) {
+    protected void showShare(Context context, String text) {
         ShareSDK.initSDK(this);
 
         String appHomePage = getString(R.string.app_home_page);
-        String shareText = text != "" ? text : "\n分享自实验室安全平台-上海大学版本："+appHomePage;
+        String shareText = text != "" ? text : "\n分享自实验室安全平台-上海大学版本：" + appHomePage;
 
         OnekeyShare oks = new OnekeyShare();
         //关闭sso授权
@@ -456,7 +441,7 @@ public class MainActivity extends ActionBarActivity {
         // text是分享文本，所有平台都需要这个字段
         oks.setText(shareText);
         // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-        oks.setImagePath(getPackageResourcePath()+"/drawable/ic_suesnews.png");//确保SDcard下面存在此张图片
+        oks.setImagePath(getPackageResourcePath() + "/drawable/ic_suesnews.png");//确保SDcard下面存在此张图片
         // url仅在微信（包括好友和朋友圈）中使用
         oks.setUrl(appHomePage);
         // comment是我对这条分享的评论，仅在人人网和QQ空间使用

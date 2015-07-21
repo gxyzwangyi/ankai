@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.rey.material.widget.Switch;
 
+import cn.edu.shu.ankai.test.Setting;
 import cn.edu.shu.ankai.utils.PreferenceConstants;
 import cn.edu.shu.ankai.utils.PreferenceUtils;
 
@@ -77,10 +78,12 @@ public class SettingFragment extends Fragment implements
             case R.id.new_msg_sound_switch:
                 PreferenceUtils.setPrefBoolean(getActivity(),
                         PreferenceConstants.SCLIENTNOTIFY, isChecked);
+                Setting.setVoiceEnable(isChecked);
                 break;
             case R.id.new_msg_vibrator_switch:
                 PreferenceUtils.setPrefBoolean(getActivity(),
                         PreferenceConstants.VIBRATIONNOTIFY, isChecked);
+                Setting.setVibrateEnable(isChecked);
                 break;
 
             case R.id.visiable_new_msg_switch:
