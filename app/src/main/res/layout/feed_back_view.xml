@@ -24,7 +24,7 @@
             android:layout_height="200dip"
             android:background="@null"
             android:gravity="left|top"
-            android:hint="对本次维修进行评价..."
+            android:hint="对软件进行评价..."
             android:inputType="textMultiLine"
             android:paddingBottom="4.0dip"
             android:paddingLeft="4.0dip"

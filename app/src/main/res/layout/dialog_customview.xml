@@ -4,8 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,17 +37,13 @@
         android:textColorHint="@color/blue_light"
         android:hint="做什么实验"
          />
-    <Spinner
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/stv"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner_lab1"
-        android:entries="@array/lou" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner_lab2"
-        android:entries="@array/jiaoshi"/>
-
-
+        android:textSize="@dimen/customEntry"
+        android:layout_marginTop="4dp"
+        android:textColorHint="@color/material_blue_500"
+        android:text="选择具体地点"
+        />
 </LinearLayout>

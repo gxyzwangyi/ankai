@@ -98,8 +98,8 @@
     <dimen name="touch_raise">6dp</dimen>
 
 
-    <dimen name="cardMarginHorizontal">10dp</dimen>
-    <dimen name="cardMarginVertical">8dp</dimen>
+    <dimen name="cardMarginHorizontal">5dp</dimen>
+    <dimen name="cardMarginVertical">4dp</dimen>
 
     <dimen name="materialviewpager_logoHeight">35dp</dimen>
 
